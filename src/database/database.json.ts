@@ -1,12 +1,12 @@
-import { join } from "path";
 import { existsSync, readFile, unlink, writeFile } from "fs";
 import { DatabaseSchema, DatabaseSchemaConfig, DatabaseSchemaTracks, defaultDatabaseData } from "./database.types";
 import { Injectable } from "@nestjs/common";
+import { AppUtils } from "src/app.utils";
 
 @Injectable()
 export class DatabaseJson {
   public data: DatabaseSchema;
-  private readonly filePath: string = join(__dirname, "jira-cli.db");
+  private readonly filePath: string = AppUtils.storagePath("jira-cli.db");
 
   async getJiraConfig(): Promise<DatabaseSchemaConfig> {
     await this.read();

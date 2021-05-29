@@ -1,15 +1,15 @@
 import * as chalk from "chalk";
 import { Injectable } from "@nestjs/common";
-import { join } from "path";
 import { Browser, launch, Page } from "puppeteer";
 import { DatabaseSchemaConfig } from "src/database/database.types";
 import { DatabaseJson } from "../database/database.json";
 import { CommandError } from "../errors/command.error";
 import { JiraIssue, JiraIssueSubtask } from "./jira.types";
+import { AppUtils } from "../app.utils";
 
 @Injectable()
 export class JiraBrowser {
-  private readonly userDataDir = join(__dirname, 'jira_browser_user_data');
+  private readonly userDataDir = AppUtils.storagePath('jira_browser_user_data');
   private browser: Browser;
 
   constructor(
