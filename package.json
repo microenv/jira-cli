@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "dist/jira.js",
   "bin": {
-    "jira": "node dist/jira.js"
+    "jira": "dist/jira.js"
   },
   "scripts": {
     "prebuild": "rimraf dist",
