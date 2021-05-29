@@ -1,7 +1,7 @@
 import { existsSync, readFile, unlink, writeFile } from "fs";
 import { DatabaseSchema, DatabaseSchemaConfig, DatabaseSchemaTracks, defaultDatabaseData } from "./database.types";
 import { Injectable } from "@nestjs/common";
-import { AppUtils } from "src/app.utils";
+import { AppUtils } from "../app.utils";
 
 @Injectable()
 export class DatabaseJson {

@@ -1,8 +1,8 @@
 import { mkdirSync } from "fs";
+import { homedir } from "os";
 import { join } from "path";
 
-// @TODO ~ Add path for windows
-let storageBasePath = '~/.microenv/jira-cli';
+let storageBasePath = join(homedir(), '.microenv/jira-cli');
 
 export class AppUtils {
   public static createStorageDir() {
